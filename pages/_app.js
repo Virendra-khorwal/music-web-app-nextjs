@@ -1,11 +1,17 @@
-import '@/styles/globals.css'
-import { Provider } from 'react-redux'
-import { store } from './api/store'
+import Sidebar from "@/components/Sidebar";
+import "@/styles/globals.css";
+import { Provider } from "react-redux";
+import { store } from "./api/store";
 
 export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      <div className="flex bg-smoke h-screen">
+        <Sidebar />
+        <div className="">
+          <Component {...pageProps} />
+        </div>
+      </div>
     </Provider>
-  ); 
+  );
 }
