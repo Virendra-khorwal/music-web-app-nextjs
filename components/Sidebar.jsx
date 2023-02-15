@@ -43,7 +43,7 @@ const Sidebar = () => {
   return (
     <div className="bg-white w-40">
       <h1>Logo</h1>
-      <div className="flex flex-col gap-4 p-4">
+      <div className="flex flex-col gap-4 p-4 mt-14">
         {menu.map((item, i) => (
           <Link
             href={item.link}

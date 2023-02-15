@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import "@/styles/globals.css";
 import { Provider } from "react-redux";
@@ -9,6 +10,7 @@ export default function App({ Component, pageProps }) {
       <div className="flex bg-smoke h-screen">
         <Sidebar />
         <div className="">
+          <Navbar />
           <Component {...pageProps} />
         </div>
       </div>
