@@ -1,10 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
+import { useDispatch, useSelector } from "react-redux";
+
+import { useGetExploreQuery } from './api/spotifyAPI';
+
+import SongCard from '@/components/SongCard';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const {data, isFetching, error} = useGetExploreQuery();
+
+  console.log(data);
+  if(!data) return console.log(error)
   return (
     <>
       <Head>
@@ -14,8 +23,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Music Web App</h1>
+        <div className="grid gap-2 grid-cols-5 md:grid-cols-7">
+          {data.map((item, key) => (
+            <SongCard item={item} key={key} />
+          ))}
+        </div>
       </main>
     </>
-  )
+  );
 }

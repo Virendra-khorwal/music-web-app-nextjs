@@ -4,8 +4,8 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 const xRapidApiKey = process.env.NEXT_PUBLIC_API_KEY;
 
-export const spotifyApi = createApi({
-  reducerPath: "spotifyApi",
+export const shazamCoreApi = createApi({
+  reducerPath: "shazamCoreApi",
   baseQuery: fetchBaseQuery({
     baseUrl: baseUrl,
     prepareHeaders: (headers) => {
@@ -16,8 +16,8 @@ export const spotifyApi = createApi({
   }),
 
   endpoints: (builder) => ({
-    getTopMonthly: builder.query({
-      query: () => "/top_20_by_monthly_listeners",
+    getExplore: builder.query({
+      query: () => "/v1/charts/country?country_code=IN",
     }),
     getTopChart: builder.query({
       query: () => "top_200_tracks",
@@ -28,4 +28,5 @@ export const spotifyApi = createApi({
   }),
 });
 
-export const {useGetTopMonthlyQuery, useGetTopChartQuery, useGetTopCountryChart} = spotifyApi;
+export const { useGetExploreQuery, useGetTopChartQuery, useGetTopCountryChart } =
+  shazamCoreApi;
