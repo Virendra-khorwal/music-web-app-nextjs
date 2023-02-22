@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const SongCard = ({item}) => {
     return (
-      <div className="bg-white h-full w-40 overflow-hidden rounded-sm hover:scale-105 transition-all ease-in cursor-pointer">
+      <div className="bg-white h-fit w-40 overflow-hidden rounded-sm hover:scale-105 transition-all ease-in cursor-pointer">
         <div>
           <Image
             alt={item.title}

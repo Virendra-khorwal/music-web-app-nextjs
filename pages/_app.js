@@ -9,9 +9,9 @@ export default function App({ Component, pageProps }) {
     <Provider store={store}>
       <div className="flex bg-smoke h-screen">
         <Sidebar />
-        <div className="overflow-hidden">
+        <div className="flex-1 h-screen overflow-hidden">
           <Navbar />
-          <div className="p-2">
+          <div className="p-2 h-full overflow-y-scroll scrollbar-none">
             <Component {...pageProps} />
           </div>
         </div>

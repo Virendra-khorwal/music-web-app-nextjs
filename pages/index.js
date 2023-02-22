@@ -22,8 +22,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <div className="grid gap-2 grid-cols-5 md:grid-cols-7">
+      <main className='pb-20'>
+        <div className="grid gap-4 grid-cols-2  md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7  h-full">
           {data.map((item, key) => (
             <SongCard item={item} key={key} />
           ))}
